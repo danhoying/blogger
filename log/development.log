@@ -13063,3 +13063,35 @@ Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450
 
 
 Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-02 09:16:48 -0700
+
+
+Started GET "/tags" for 127.0.0.1 at 2015-05-02 09:27:25 -0700
+Processing by TagsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/tags/12" for 127.0.0.1 at 2015-05-02 09:27:29 -0700
+Processing by TagsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L8MgcDrNJo2s8XzzOAiSo4K53CHiSHaeBkMRQBgTrUr+cnIMbcAmIvzVt9IPnPCIUU7XGgiK33HG3a/7fLp0yg==", "id"=>"12"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mDELETE FROM "tags" WHERE "tags"."id" = ?[0m  [["id", 12]]
+  [1m[35m (74.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/tags
+Completed 302 Found in 81ms (ActiveRecord: 76.3ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2015-05-02 09:27:29 -0700
+Processing by TagsController#index as HTML
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-05-02 09:27:35 -0700
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 36.8ms | ActiveRecord: 0.2ms)
